@@ -1,0 +1,34 @@
+<div class="width">
+  <md-chip-list *ngIf="appState.selectedGenre" class="chipGroupSpacing">
+    <md-chip
+      class="chipSpacing"
+      color="primary"
+    >{{appState.selectedGenre}}</md-chip>
+  </md-chip-list>
+
+  <md-chip-list *ngIf="appState.likedSongs" class="chipGroupSpacing">
+    <md-chip
+      *ngFor="let song of appState.likedSongs"
+      class="chipSpacing"
+      color="secondary"
+    >
+      {{song.title}}
+    </md-chip>
+  </md-chip-list>
+
+  <md-tab-group
+    [selectedIndex]="appState.selectedIndex"
+    (selectedIndexChange)="tabIndexChange($event)"
+  >
+    <md-tab label="Genres">
+      <genre [genres]="genres"></genre>
+    </md-tab>
+    <md-tab label="Listen" [disabled]="!appState.selectedGenre">
+      <listen></listen>
+    </md-tab>
+    <md-tab label="Recommendations" [disabled]="appState.likedSongs.length < 5">
+      some recommendations will go here!!
+    </md-tab>
+  </md-tab-group>
+
+</div>

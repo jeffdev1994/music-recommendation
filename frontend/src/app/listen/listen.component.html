@@ -1,0 +1,19 @@
+<div>
+  <div *ngIf="currentSong == '-1'" class="centeredButtons">
+    <button md-raised-button color="primary" (click)="start()">Begin</button>
+  </div>
+
+  <div *ngIf="currentSong != '-1'">
+    <h2>artist: {{appState.fma[currentSong].artist}}</h2>
+    <h4>title: {{appState.fma[currentSong].title}}</h4>
+
+    <div class="spacedButtons">
+      <button md-fab color="warn" (click)="start()"><md-icon>clear</md-icon></button>
+
+      <button md-fab color="accent" (click)="pause()" *ngIf="!audio.paused"><md-icon>pause</md-icon></button>
+      <button md-fab color="accent" (click)="resume()" *ngIf="audio.paused"><md-icon>play_arrow</md-icon></button>
+
+      <button md-fab color="primary" (click)="check()"><md-icon>check</md-icon></button>
+    </div>
+  </div>
+</div>

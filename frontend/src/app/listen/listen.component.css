@@ -1,0 +1,11 @@
+.spacedButtons {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5px;
+}
+
+.centeredButtons {
+  display: flex;
+  justify-content: center;
+  padding: 40px 5px;
+}
