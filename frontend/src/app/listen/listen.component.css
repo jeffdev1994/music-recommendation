@@ -1,11 +1,49 @@
-.spacedButtons {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 5px;
-}
-
 .centeredButtons {
   display: flex;
   justify-content: center;
   padding: 40px 5px;
+}
+
+.musicPlayer {
+  border: 2px solid #aba9a9;
+  border-radius: 16px;
+  box-shadow: 5px 8px 20px 1px rgba(158,158,158,1);
+  margin: 24px;
+}
+
+.musicPlayerTop {
+  border-radius: 16px 16px 0px 0px;
+  padding: 40px 24px;
+  background-color: #F1EDF8;
+}
+
+.musicPlayerSliderSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #aba9a9;
+  background-color: #efefef;
+}
+
+.musicPlayerSlider {
+  width: 400px;
+}
+
+.musicPlayerBottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 64px;
+  border-top: 1px solid #aba9a9;
+}
+
+.artist {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.title {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 24px;
 }

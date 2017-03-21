@@ -3,11 +3,30 @@
     <button md-raised-button color="primary" (click)="start()">Begin</button>
   </div>
 
-  <div *ngIf="currentSong != '-1'">
-    <h2>artist: {{appState.fma[currentSong].artist}}</h2>
-    <h4>title: {{appState.fma[currentSong].title}}</h4>
+  <div class="musicPlayer" *ngIf="currentSong != '-1'">
+    <div class="musicPlayerTop">
+      <div class="title">{{appState.fma[currentSong].title}}</div>
+      <div class="artist">By: {{appState.fma[currentSong].artist}}</div>
+    </div>
 
-    <div class="spacedButtons">
+    <div class="musicPlayerSliderSection">
+      <div>
+        {{numberToTimeString(currentTime)}}
+      </div>
+      <md-slider
+        class="musicPlayerSlider"
+        [max]="audio.duration"
+        [min]="0"
+        [value]="currentTime"
+        (input)="seek($event)"
+      >
+      </md-slider>
+      <div>
+        {{numberToTimeString(audio.duration)}}
+      </div>
+    </div>
+
+    <div class="musicPlayerBottom">
       <button md-fab color="warn" (click)="start()"><md-icon>clear</md-icon></button>
 
       <button md-fab color="accent" (click)="pause()" *ngIf="!audio.paused"><md-icon>pause</md-icon></button>

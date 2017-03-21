@@ -28,6 +28,7 @@ import { AppState, InternalStateType } from './app.service';
 import { HomeComponent, HomeDialogComponent } from './home';
 import { ListenComponent } from './listen';
 import { GenreComponent } from './genre';
+import { ArtistsComponent } from './artists';
 import { NoContentComponent } from './no-content';
 
 import '../styles/styles.scss';
@@ -56,6 +57,7 @@ type StoreType = {
     ListenComponent,
     HomeComponent,
     HomeDialogComponent,
+    ArtistsComponent,
     NoContentComponent
   ],
   entryComponents: [HomeDialogComponent],

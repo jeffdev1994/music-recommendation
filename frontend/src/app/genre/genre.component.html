@@ -1,5 +1,10 @@
-<div class="verticalButtons">
-  <button md-button *ngFor="let genre of genres" (click)="selectGenre(genre)">
+<div class="squareButtonsLayout">
+  <button
+    md-button
+    class="genreButton"
+    *ngFor="let genre of genres"
+    (click)="selectGenre(genre)"
+  >
     {{genre}}
   </button>
 </div>

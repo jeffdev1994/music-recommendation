@@ -4,3 +4,19 @@
   flex-direction: column;
   align-items: stretch;
 }
+
+.squareButtonsLayout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.genreButton {
+  height: 200px;
+  width: 200px;
+  margin: 25px 0px;
+  border: 1px solid #aba9a9;
+  border-radius: 10px;
+  box-shadow: 5px 8px 20px 1px rgba(158,158,158,1);
+  background-color: #F1EDF8;
+}

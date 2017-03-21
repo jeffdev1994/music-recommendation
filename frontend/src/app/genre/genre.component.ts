@@ -22,6 +22,7 @@ export class GenreComponent implements OnInit {
   public selectGenre(genre: string): void {
     this.appState.setGenre(genre);
     this.appState.resetLikedSongs();
+    this.appState.resetUnselectedArtists();
     this.appState.setIndex(1);
   }
 }

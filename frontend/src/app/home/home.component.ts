@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   // Set our default values
   public fma_data = {};
   genres = [];
+  artists = [];
 
 
   constructor(
@@ -34,6 +35,12 @@ export class HomeComponent implements OnInit {
         this.genres = _.uniq(
           _.map(json, (song: FmaSong) => {
             return song.top_genre;
+          })
+        );
+
+        this.artists = _.uniq(
+          _.map(json, (song: FmaSong) => {
+            return song.artist;
           })
         );
 

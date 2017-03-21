@@ -23,7 +23,7 @@ export class AppState {
 
   fma: FmaData = {};
   selectedGenre: string = "";
-  selectedArtists: string[] = [];
+  unselectedArtists: string[] = [];
   selectedIndex = 0;
   likedSongs: FmaSong[] = [];
 
@@ -47,8 +47,23 @@ export class AppState {
     this.likedSongs = [];
   }
 
-  public selectArtist(artist: string){
-    this.selectedArtists = _.xor(this.selectedArtists, [artist])
+  public resetUnselectedArtists() {
+    this.unselectedArtists = [];
   }
 
+  public unselectArtist(artist: string){
+    this.unselectedArtists = _.xor(this.unselectedArtists, [artist])
+  }
+
+  public getSelectedGenreSongs(): FmaSong[]{
+    return _.omitBy(this.fma, (song: FmaSong) => {
+      return song.top_genre !== this.selectedGenre;
+    }) as FmaSong[];
+  }
+
+  public getGenreAndArtistSongs(): FmaSong[] {
+    return _.omitBy(this.getSelectedGenreSongs(), (song: FmaSong) => {
+      return _.indexOf(this.unselectedArtists, song.artist) !== -1 ;
+    }) as FmaSong[];
+  }
 }

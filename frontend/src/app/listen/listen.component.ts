@@ -1,6 +1,8 @@
 import {Component, OnInit, Input} from '@angular/core';
 import { AppState, FmaSong } from '../app.service';
 import * as _ from 'lodash';
+import * as numeral from 'numeral';
+import {Observable} from 'rxjs/Rx';
 
 @Component({
   selector: 'listen',
@@ -11,6 +13,8 @@ import * as _ from 'lodash';
 })
 export class ListenComponent implements OnInit {
   audio = new Audio();
+  currentTime = 0;
+
   currentSong = "-1";
 
   constructor(
@@ -18,12 +22,11 @@ export class ListenComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    Observable.timer(500,50).subscribe(t => this.currentTime = this.audio.currentTime);
   }
 
   private getRandomSong(): any {
-    const filteredByGenre = _.omitBy(this.appState.fma, (song: FmaSong) => {
-      return song.top_genre !== this.appState.selectedGenre;
-    });
+    const filteredByGenre = this.appState.getGenreAndArtistSongs();
 
     const keys = Object.keys(filteredByGenre);
     const i = Math.floor(Math.random() * keys.length);
@@ -51,11 +54,19 @@ export class ListenComponent implements OnInit {
     this.appState.likeSong(this.currentSong);
     if (this.appState.likedSongs.length >= 5){
       this.pause();
-      this.appState.setIndex(2);
+      this.appState.setIndex(3);
     }
     else {
       this.start();
     }
+  }
+
+  public numberToTimeString(number: number): string {
+    return numeral(number).format('00:00:00');
+  }
+
+  public seek(event: any): void {
+    this.audio.currentTime = event.value;
   }
 
 }

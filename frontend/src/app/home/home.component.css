@@ -1,9 +1,15 @@
 .width {
-  width: 500px;
+  width: 700px;
 }
 
 .chipSpacing {
   margin: 3px 5px;
+}
+
+.warnChipSpacing {
+  margin: 3px 5px;
+  background-color: #F44336;
+  color: white;
 }
 
 .chipGroupSpacing {

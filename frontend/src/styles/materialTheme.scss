@@ -1,14 +1,15 @@
-@import 'variables';
-
-@import '~@angular/material/core/theming/all-theme';
-@include mat-core();
-
-// Define a theme.
-$app-primary: mat-palette($mat-purple);
-$app-accent:  mat-palette($mat-grey);
-$app-warn: mat-palette($mat-red);
-
-$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
-
-// Include all theme styles for the components.
-@include angular-material-theme($app-theme);
+//@import 'variables';
+//
+//@import '~@angular/material/core/theming/all-theme';
+//@include mat-core();
+//
+//// Define a theme.
+//$app-primary: mat-palette($mat-purple);
+//$app-accent:  mat-palette($mat-grey);
+//$app-warn: mat-palette($mat-red);
+//
+//$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+//
+//// Include all theme styles for the components.
+//@include angular-material-theme($app-theme);
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';

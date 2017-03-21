@@ -1,0 +1,16 @@
+<div>
+  <div class="alignRight">
+    <button md-fab color="accent" (click)="next()"><md-icon>arrow_forward</md-icon></button>
+  </div>
+  <div class="checkboxListLayout">
+    <md-checkbox
+      class="artistCheckbox"
+      *ngFor="let artist of getGenreArtists()"
+      (change)="selectArtist(artist)"
+      color="primary"
+      checked="true"
+    >
+      {{artist}}
+    </md-checkbox>
+  </div>
+</div>

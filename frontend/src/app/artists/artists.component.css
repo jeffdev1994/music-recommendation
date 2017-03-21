@@ -1,0 +1,16 @@
+.checkboxListLayout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.artistCheckbox {
+  width: 300px;
+  margin: 8px 16px;
+}
+
+.alignRight {
+  display: flex;
+  justify-content: flex-end;
+  margin: 8px;
+}
