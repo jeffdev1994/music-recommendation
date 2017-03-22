@@ -1,0 +1,30 @@
+<div>
+  <div class="musicPlayer">
+    <div class="musicPlayerTop">
+      <div class="title">{{song.title}}</div>
+      <div class="artist">By: {{song.artist}}</div>
+    </div>
+
+    <div class="musicPlayerSliderSection">
+      <div>
+        {{numberToTimeString(currentTime)}}
+      </div>
+      <md-slider
+        class="musicPlayerSlider"
+        [max]="audio.duration"
+        [min]="0"
+        [value]="currentTime"
+        (input)="seek($event)"
+      >
+      </md-slider>
+      <div>
+        {{numberToTimeString(audio.duration)}}
+      </div>
+    </div>
+
+    <div class="musicPlayerBottom">
+      <button md-fab color="accent" (click)="pause()" *ngIf="!audio.paused"><md-icon>pause</md-icon></button>
+      <button md-fab color="accent" (click)="resume()" *ngIf="audio.paused"><md-icon>play_arrow</md-icon></button>
+    </div>
+  </div>
+</div>

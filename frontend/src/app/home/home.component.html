@@ -38,7 +38,14 @@
       <listen></listen>
     </md-tab>
     <md-tab label="Recommendations" [disabled]="appState.likedSongs.length < 5">
-      some recommendations will go here!!
+      <div *ngFor="let songId of getObjectKeys(appState.recommendedSongs)">
+        <musicPlayer
+          [song]="appState.recommendedSongs[songId]"
+          [songId]="songId"
+        >
+        </musicPlayer>
+      </div>
+
     </md-tab>
   </md-tab-group>
 

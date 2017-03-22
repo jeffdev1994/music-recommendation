@@ -54,6 +54,8 @@ export class ListenComponent implements OnInit {
     this.appState.likeSong(this.currentSong);
     if (this.appState.likedSongs.length >= 5){
       this.pause();
+      // TODO: may need to start some loading here, depending on how long recommending takes
+      this.appState.recommendSongs();
       this.appState.setIndex(3);
     }
     else {

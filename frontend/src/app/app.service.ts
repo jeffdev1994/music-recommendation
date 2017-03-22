@@ -26,6 +26,7 @@ export class AppState {
   unselectedArtists: string[] = [];
   selectedIndex = 0;
   likedSongs: FmaSong[] = [];
+  recommendedSongs: FmaData = {};
 
   public setGenre(genre: string){
     this.selectedGenre = genre;
@@ -65,5 +66,19 @@ export class AppState {
     return _.omitBy(this.getSelectedGenreSongs(), (song: FmaSong) => {
       return _.indexOf(this.unselectedArtists, song.artist) !== -1 ;
     }) as FmaSong[];
+  }
+
+  public recommendSongs(): void {
+    //just recommend first 5 songs here, will be replaced with actual recommendations
+    const recommendedSongs = {};
+    let i = 0;
+    _.map(Object.keys(this.fma), (key: any) => {
+      if(i < 5){
+        recommendedSongs[key] = this.fma[key];
+        i++;
+      }
+    });
+
+    this.recommendedSongs = recommendedSongs
   }
 }

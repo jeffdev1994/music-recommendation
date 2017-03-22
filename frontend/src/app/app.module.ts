@@ -29,6 +29,7 @@ import { HomeComponent, HomeDialogComponent } from './home';
 import { ListenComponent } from './listen';
 import { GenreComponent } from './genre';
 import { ArtistsComponent } from './artists';
+import { MusicPlayerComponent } from './musicPlayer';
 import { NoContentComponent } from './no-content';
 
 import '../styles/styles.scss';
@@ -58,6 +59,7 @@ type StoreType = {
     HomeComponent,
     HomeDialogComponent,
     ArtistsComponent,
+    MusicPlayerComponent,
     NoContentComponent
   ],
   entryComponents: [HomeDialogComponent],

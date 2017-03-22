@@ -43,12 +43,15 @@ export class HomeComponent implements OnInit {
             return song.artist;
           })
         );
-
       });
   }
 
   public tabIndexChange(index: number){
     this.appState.setIndex(index);
+  }
+
+  public getObjectKeys(object): any[] {
+    return Object.keys(object);
   }
 
   public launchSnackBar(): void {
