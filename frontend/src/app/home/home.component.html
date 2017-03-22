@@ -38,14 +38,15 @@
       <listen></listen>
     </md-tab>
     <md-tab label="Recommendations" [disabled]="appState.likedSongs.length < 5">
-      <div *ngFor="let songId of getObjectKeys(appState.recommendedSongs)">
-        <musicPlayer
-          [song]="appState.recommendedSongs[songId]"
-          [songId]="songId"
-        >
-        </musicPlayer>
+      <div style="display:flex;flex-wrap: wrap;justify-content: space-between;">
+        <div *ngFor="let songId of getObjectKeys(appState.recommendedSongs)">
+          <musicPlayer
+            [song]="appState.recommendedSongs[songId]"
+            [songId]="songId"
+          >
+          </musicPlayer>
+        </div>
       </div>
-
     </md-tab>
   </md-tab-group>
 

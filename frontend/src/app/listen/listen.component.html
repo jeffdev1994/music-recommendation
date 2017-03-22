@@ -27,12 +27,12 @@
     </div>
 
     <div class="musicPlayerBottom">
-      <button md-fab color="warn" (click)="start()"><md-icon>clear</md-icon></button>
+      <button md-fab color="warn" (click)="start()"><md-icon>thumb_down</md-icon></button>
 
       <button md-fab color="accent" (click)="pause()" *ngIf="!audio.paused"><md-icon>pause</md-icon></button>
       <button md-fab color="accent" (click)="resume()" *ngIf="audio.paused"><md-icon>play_arrow</md-icon></button>
 
-      <button md-fab color="primary" (click)="check()"><md-icon>check</md-icon></button>
+      <button md-fab color="primary" (click)="check()"><md-icon>favorite</md-icon></button>
     </div>
   </div>
 </div>
