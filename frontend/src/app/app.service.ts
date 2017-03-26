@@ -33,6 +33,14 @@ export class AppState {
     this.selectedGenre = genre;
   }
 
+  public deselectGrenre() {
+    this.selectedGenre = "";
+    this.unselectedArtists = [];
+    this.likedSongs = [];
+    this.dislikedSongs = [];
+    this.selectedIndex = 0;
+  }
+
   public setFMA(fma: FmaData){
     this.fma = fma;
   }
@@ -45,8 +53,20 @@ export class AppState {
     this.likedSongs.push(this.fma[index]);
   }
 
+  public unLikeSong(song: FmaSong) {
+    _.remove(this.likedSongs, (likedSong: FmaSong) => {
+        return JSON.stringify(likedSong) === JSON.stringify(song);
+    })
+  }
+
   public dislikeSong(index){
     this.dislikedSongs.push(this.fma[index]);
+  }
+
+  public unDislikeSong(song: FmaSong) {
+    _.remove(this.dislikedSongs, (dislikedSong: FmaSong) => {
+      return JSON.stringify(dislikedSong) === JSON.stringify(song);
+    })
   }
 
   public resetLikedSongs(){

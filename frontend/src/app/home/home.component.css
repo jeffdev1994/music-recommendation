@@ -2,11 +2,11 @@
   width: 700px;
 }
 
-.chipSpacing {
+.chip {
   margin: 3px 5px;
 }
 
-.warnChipSpacing {
+.warnChip {
   margin: 3px 5px;
   background-color: #F44336;
   color: white;
@@ -14,4 +14,10 @@
 
 .chipGroupSpacing {
   margin: 20px;
+}
+
+.closeChip {
+  font-size: 10px;
+  height:10px;
+  width:16px
 }

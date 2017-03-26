@@ -1,14 +1,16 @@
 <div class="width">
   <md-chip-list *ngIf="appState.selectedGenre" class="chipGroupSpacing">
     <md-chip
-      class="chipSpacing"
-    >{{appState.selectedGenre}}</md-chip>
+      class="chip"
+    >
+      {{appState.selectedGenre}}
+    </md-chip>
   </md-chip-list>
 
   <md-chip-list *ngIf="appState.unselectedArtists" class="chipGroupSpacing">
     <md-chip
       *ngFor="let artist of appState.unselectedArtists"
-      class="warnChipSpacing"
+      class="warnChip"
     >
       {{artist}}
     </md-chip>
@@ -17,8 +19,9 @@
   <md-chip-list *ngIf="appState.likedSongs" class="chipGroupSpacing">
     <md-chip
       *ngFor="let song of appState.likedSongs"
-      class="chipSpacing"
+      class="chip"
     >
+      <md-icon class="closeChip" (click)="appState.unLikeSong(song)">clear</md-icon>
       {{song.title}}
     </md-chip>
   </md-chip-list>
@@ -26,8 +29,9 @@
   <md-chip-list *ngIf="appState.dislikedSongs" class="chipGroupSpacing">
     <md-chip
       *ngFor="let song of appState.dislikedSongs"
-      class="warnChipSpacing"
+      class="warnChip"
     >
+      <md-icon class="closeChip" (click)="appState.unDislikeSong(song)">clear</md-icon>
       {{song.title}}
     </md-chip>
   </md-chip-list>
