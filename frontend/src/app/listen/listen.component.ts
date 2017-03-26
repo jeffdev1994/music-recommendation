@@ -63,6 +63,11 @@ export class ListenComponent implements OnInit {
     }
   }
 
+  public dislike(): void {
+    this.appState.dislikeSong(this.currentSong);
+    this.start();
+  }
+
   public numberToTimeString(number: number): string {
     return numeral(number).format('00:00:00');
   }

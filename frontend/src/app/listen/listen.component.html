@@ -27,7 +27,7 @@
     </div>
 
     <div class="musicPlayerBottom">
-      <button md-fab color="warn" (click)="start()"><md-icon>thumb_down</md-icon></button>
+      <button md-fab color="warn" (click)="dislike()"><md-icon>thumb_down</md-icon></button>
 
       <button md-fab color="accent" (click)="pause()" *ngIf="!audio.paused"><md-icon>pause</md-icon></button>
       <button md-fab color="accent" (click)="resume()" *ngIf="audio.paused"><md-icon>play_arrow</md-icon></button>

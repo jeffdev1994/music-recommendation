@@ -23,6 +23,15 @@
     </md-chip>
   </md-chip-list>
 
+  <md-chip-list *ngIf="appState.dislikedSongs" class="chipGroupSpacing">
+    <md-chip
+      *ngFor="let song of appState.dislikedSongs"
+      class="warnChipSpacing"
+    >
+      {{song.title}}
+    </md-chip>
+  </md-chip-list>
+
   <md-tab-group
     [selectedIndex]="appState.selectedIndex"
     (selectedIndexChange)="tabIndexChange($event)"

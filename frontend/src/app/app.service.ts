@@ -26,6 +26,7 @@ export class AppState {
   unselectedArtists: string[] = [];
   selectedIndex = 0;
   likedSongs: FmaSong[] = [];
+  dislikedSongs: FmaSong[] = [];
   recommendedSongs: FmaData = {};
 
   public setGenre(genre: string){
@@ -42,6 +43,10 @@ export class AppState {
 
   public likeSong(index){
     this.likedSongs.push(this.fma[index]);
+  }
+
+  public dislikeSong(index){
+    this.dislikedSongs.push(this.fma[index]);
   }
 
   public resetLikedSongs(){
